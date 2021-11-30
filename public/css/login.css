@@ -9,6 +9,14 @@
     border-radius: 30px;
 }
 
+#logoImg {
+    position: absolute;
+    width: 239px;
+    height: 71px;
+    margin-left: 152px;
+    margin-top: 102px;
+}
+
 #loginForm {
     display:flex;
     flex-direction: column;
@@ -74,13 +82,7 @@
     color: rgba(0, 0, 0, 0.3);
 }
 
-#logoImg {
-    position: fixed;
-    width: 239px;
-    height: 71px;
-    margin-left: 152px;
-    margin-top: 102px;
-}
+
 
 #animalImg {
     position: absolute;
