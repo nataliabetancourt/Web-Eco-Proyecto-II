@@ -18,6 +18,15 @@ body {
     margin-top: 102px;
 }
 
+#title {
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+    font-weight: 5px;
+    font-size: 32px;
+    line-height: 42px;
+    color: #1C477F;
+}
+
 #signupSection {
     position: absolute;
     width: 894px;
@@ -53,15 +62,15 @@ body {
     padding: 10px;
 }
 
-#signupBtn {
+#signupPetBtn {
     font-family: Airbnb Cereal App;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 21px;
     color: #1C477F;
-    width: 533px;
-    height: 45px;
+    width: 243px;
+    height: 57px;
     background: #DBFF8D;
     border: 1px solid #1C477F;
     box-sizing: border-box;
@@ -69,27 +78,21 @@ body {
     border-radius: 10px;
 }
 
-#title {
-    font-family: Airbnb Cereal App;
-    font-style: normal;
-    font-weight: 5px;
-    font-size: 32px;
-    line-height: 42px;
-    color: #1C477F;
-}
-
-#loginQuestion {
+#signupPetBtn2{
+    position: absolute;
     font-family: Airbnb Cereal App;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 21px;
     color: #1C477F;
-    margin-left: 160px;
+    width: 243px;
+    height: 57px;
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-left: 285px;
+    margin-top: 453px;
 }
-
-::placeholder {
-    color: rgba(0, 0, 0, 0.3);
-}
-
-

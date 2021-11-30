@@ -6,7 +6,8 @@ module.exports = {
     entry: {
         signup: './src/signup.js',
         login: './src/login.js',
-        main: './src/main.js'
+        main: './src/main.js',
+        pet_signup: './src/pet-signup.js'
     },
     output: {
         path: path.resolve(__dirname, 'public'),
