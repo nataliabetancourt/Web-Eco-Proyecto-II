@@ -14,61 +14,86 @@
     font-size: 28px;
     line-height: 42px;
     color: #1C477F;
-   
     position: absolute;
     width: 126px;
     height: 36px;
     left: 60px;
     top: 137px;
-
 }
 
 #addBtn {
-
     position: absolute;
     width: 40px;
     height: 42px;
     left: 61px;
     top: 280px;
-
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border-radius: 5px;
-
 }
 
 #subtitle2 {
-
     font-family: Airbnb Cereal App;
     font-style: normal;
     font-weight: 5px;
     font-size: 28px;
     line-height: 36px;
     color: #1C477F;
-
     position: absolute;
     width: 137px;
     height: 36px;
     left: 60px;
     top: 459px;
-
 }
 
 #addBtn2 {
-
     position: absolute;
     width: 40px;
     height: 42px;
     left: 61px;
     top: 598px;
-
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border-radius: 5px;
 
+
+}
+
+.card {
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    padding: 1em;
+    border-radius: 10px;
+
+}
+
+.petName {
+
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 5px;
+    font-size: 16px;
+    padding: 10px;
+    color: #1C477F;
+
+}
+
+.age {
+    
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 5px;
+    font-size: 16px;
+    padding: 10px;
+    color: #1C477F;
+
 }
 
 .editBtn {
+
     font-family: Poppins, sans-serif;
     font-weight: 500;
     padding: 0.5em;
@@ -80,5 +105,19 @@
 
     background: #7399BD;
     border-radius: 10px;
+
 }
+
+.color {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 197px;
+    top: 300px;
+    border-radius: 100px;
+
+    background: #DBFF8D;
+}
+
+
 

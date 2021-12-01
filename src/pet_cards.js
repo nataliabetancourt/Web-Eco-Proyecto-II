@@ -25,9 +25,12 @@ export class petCard{
         let birth = document.createElement("p");
         birth.className = "birth";
 
-        let color = document.createElement("button");
+        let condiciones = document.createElement("p");
+        condiciones.className = "condiciones";
+
+        let color = document.createElement("p");
         color.className = "color";
-        color.innerHTML = " x ";
+        color.innerHTML = "  ";
 
         let editBtn = document.createElement("button");
         editBtn.className = "editBtn";
@@ -41,7 +44,6 @@ export class petCard{
 
 
         });
-
 
         card.appendChild(petName);
         card.appendChild(age);
