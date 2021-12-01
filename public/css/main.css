@@ -67,3 +67,18 @@
     border-radius: 5px;
 
 }
+
+.editBtn {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    padding: 0.5em;
+    position: absolute;
+    width: 156px;
+    height: 36px;
+    left: 130px;
+    top: 387px;
+
+    background: #7399BD;
+    border-radius: 10px;
+}
+
