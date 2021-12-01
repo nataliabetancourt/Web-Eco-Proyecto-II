@@ -62,7 +62,6 @@ function addPet(e, ev) {
     });
 
 }
-
 addBtn.addEventListener("click", addPet);
 
 function signOut(e, ev){
@@ -74,7 +73,6 @@ function signOut(e, ev){
         console.log(error.message);
     });
 }
-
 signOutBtn.addEventListener("click", signOut);
 
 
