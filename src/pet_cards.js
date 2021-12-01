@@ -3,13 +3,10 @@ import { getDatabase, ref, onValue, set, update } from 'firebase/database';
 export class petCard{
 
     constructor(pet){
-
         this.pet = pet;
-
     }
 
     render(){
-
         let card = document.createElement("div");
         card.className = "cards";
 
@@ -51,6 +48,5 @@ export class petCard{
         card.appendChild(editBtn);
 
         return card;
-
     }
 }
