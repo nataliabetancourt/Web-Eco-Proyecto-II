@@ -1,10 +1,9 @@
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue } from 'firebase/database';
-
 import { getFirebaseConfig } from './firebase-config';
-
 import { petCard } from './pet_cards';
+import { productCard } from './product_cards';
 
 // Inicializar firebase
 const firebaseAppConfig = getFirebaseConfig();
@@ -16,6 +15,7 @@ const pets = document.getElementById('pets');
 const addBtn = document.getElementById('addBtn');
 const addBtn2 = document.getElementById('addBtn2');
 const signOutBtn = document.getElementById('signOutBtn');
+const addProductSection = document.getElementById('addProductSection');
 
 function getPets(user_account) {
 
@@ -29,16 +29,6 @@ function getPets(user_account) {
     });
 }
 
-//If user is signed in, show pets and products
-onAuthStateChanged(auth, (user_account)=>{
-    //If the user was logged in
-    if (user_account){
-        getPets(user_account);
-    } else {
-        window.location.href = "login.html";
-    }
-});
-
 function actPets(data) {
     if (data) {
         pets.innerHTML = " ";
@@ -49,19 +39,30 @@ function actPets(data) {
     }
 }
 
-function addPet(e, ev) {
 
-    auth.addPet().then(()=> {
-    
-        window.location.href = "pet-signup.html"
-    
-    }).catch((error) => {
+//If user is signed in, show pets and products
+onAuthStateChanged(auth, (user_account)=>{
+    //If the user was logged in
+    if (user_account){
+        //Show pets registered
+        getPets(user_account);
 
-        console.log(error.message);
-        
-    });
+        //Add products
+        addProductSection.innerHTML = " ";
+        addBtn2.addEventListener("click", function(e, ev){
+            const addProduct = new productCard(user_account);
+            addProductSection.appendChild(addProduct.renderAddProduct());
+        });
 
+<<<<<<< HEAD
 }
+=======
+    } else {
+        window.location.href = "login.html";
+    }
+});
+
+>>>>>>> f40a02cef440f7e11917fa4771289f7598af465d
 addBtn.addEventListener("click", addPet);
 
 function signOut(e, ev){
