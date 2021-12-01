@@ -78,7 +78,7 @@ body {
     border-radius: 10px;
 }
 
-#signupPetBtn2{
+#nextBtn{
     position: absolute;
     font-family: Airbnb Cereal App;
     font-style: normal;
@@ -94,5 +94,5 @@ body {
     box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     margin-left: 285px;
-    margin-top: 453px;
+    margin-top: 457px;
 }
