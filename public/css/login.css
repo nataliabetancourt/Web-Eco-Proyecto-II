@@ -1,3 +1,7 @@
+body {
+    background: #6A453B;
+}
+
 #loginSection {
     position: absolute;
     width: 894px;
@@ -9,15 +13,12 @@
     border-radius: 30px;
 }
 
-
 #logoImg {
-
     position: absolute;
     width: 239px;
     height: 71px;
     margin-left: 152px;
     margin-top: 102px;
-
 }
 
 #loginForm {
@@ -59,8 +60,6 @@
     box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
-
-
 
 #title {
     font-family: Airbnb Cereal App;

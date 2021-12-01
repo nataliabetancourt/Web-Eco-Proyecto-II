@@ -15,6 +15,7 @@ const auth = getAuth();
 const pets = document.getElementById('pets');
 const addBtn = document.getElementById('addBtn');
 const addBtn2 = document.getElementById('addBtn2');
+const signOutBtn = document.getElementById('signOutBtn');
 
 function getPets(user_account) {
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
@@ -43,4 +44,16 @@ function actPets(data) {
         });
     }
 }
+
+function signOut(e, ev){
+    auth.signOut()
+    .then(()=> {
+        window.location.href = "login.html"
+    })
+    .catch((error) => {
+        console.log(error.message);
+    });
+}
+
+signOutBtn.addEventListener("click", signOut);
 
