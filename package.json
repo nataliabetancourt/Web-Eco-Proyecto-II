@@ -12,11 +12,11 @@
   "author": "David Manzano",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^9.1.2"
+    "firebase": "^9.5.0"
   },
   "devDependencies": {
-    "webpack": "^5.58.2",
+    "webpack": "^5.64.4",
     "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-cli": "^4.9.0"
+    "webpack-cli": "^4.9.1"
   }
 }

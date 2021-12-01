@@ -18,10 +18,14 @@ const signOutBtn = document.getElementById('signOutBtn');
 const addProductSection = document.getElementById('addProductSection');
 
 function getPets(user_account) {
+
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
+
     onValue(dbRef, (snapshot) => {
+
         const data = snapshot.val();
         actPets(data);
+
     });
 }
 
@@ -55,9 +59,9 @@ onAuthStateChanged(auth, (user_account)=>{
     }
 });
 
+addBtn.addEventListener("click", addPet);
 
-//Signout button function
-function signOut(){
+function signOut(e, ev){
     auth.signOut()
     .then(()=> {
         window.location.href = "login.html"
@@ -68,4 +72,5 @@ function signOut(){
 }
 
 signOutBtn.addEventListener("click", signOut);
+
 
