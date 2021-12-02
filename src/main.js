@@ -5,6 +5,7 @@ import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
 import { productCard } from './product_cards';
 import { isEmpty } from '@firebase/util';
+import { productCard } from './product_cards';
 
 //Inicializar firebase
 const firebaseAppConfig = getFirebaseConfig();
@@ -24,6 +25,7 @@ const condiciones = document.getElementById('amount');
 const closeBtn1 = document.getElementById('closeBtn');
 
 //Product elements
+const productsSection = document.getElementById('productsSection');
 const addBtn2 = document.getElementById('addBtn2');
 const addProductSection = document.getElementById('addProductSection');
 const closeBtn = document.getElementById('closeBtn');
@@ -36,7 +38,7 @@ const expiration = document.getElementById('expiration');
 const notes = document.getElementById('notes');
 const addProBtn = document.getElementById('addProBtn');
 
-
+//Get pets from database
 function getPets(user_account) {
     
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
@@ -46,17 +48,21 @@ function getPets(user_account) {
     });
 }
 
+//Show pets from database
 function actPets(data) {
     if (data) {
         pets.innerHTML = " ";
         Object.keys(data).forEach((key, index)=> { 
-            const card = new petCard(data[key])
+            const card = new petCard(data[key]);
             pets.appendChild(card.render()); 
         });
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f110633b4c6b90694351923d65ed0c8a70b7c39
 //Get products from database
 function getProducts(user_account){
     const dbRef = ref(db, 'users/' + user_account.uid + '/products');
@@ -123,7 +129,6 @@ function newProduct(user_account){
                 amount: amount.value,
                 use: use.value,
                 expiration: expiration.value,
-                notes: notes.value,
                 days: days,
                 measurement: measurement
             }
