@@ -55,21 +55,16 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border-radius: 5px;
-
-
 }
 
 .card {
-
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     padding: 1em;
     border-radius: 10px;
-
 }
 
 .petName {
-
     font-family: Airbnb Cereal App;
     font-style: normal;
     font-weight: normal;
@@ -77,11 +72,9 @@
     font-size: 16px;
     padding: 10px;
     color: #1C477F;
-
 }
 
 .age {
-    
     font-family: Airbnb Cereal App;
     font-style: normal;
     font-weight: normal;
@@ -89,11 +82,9 @@
     font-size: 16px;
     padding: 10px;
     color: #1C477F;
-
 }
 
 .editBtn {
-
     font-family: Poppins, sans-serif;
     font-weight: 500;
     padding: 0.5em;
@@ -102,10 +93,8 @@
     height: 36px;
     left: 130px;
     top: 387px;
-
     background: #7399BD;
     border-radius: 10px;
-
 }
 
 .color {
@@ -115,9 +104,72 @@
     left: 197px;
     top: 300px;
     border-radius: 100px;
-
     background: #DBFF8D;
 }
 
+.cardProduct {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 370px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    padding: 1em;
+    border-radius: 10px;
+    width: 615px;
+}
+
+.closeBtn {
+    font-family: Airbnb Cereal App;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    color: #1C477F;
+    box-shadow: 0px 0px 15px rgba(182, 182, 182, 0.301);
+    padding: 10px;
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    margin-right: 0;
+}
+
+.addProTitle {
+    font-family: Airbnb Cereal App;
+    font-weight: 500;
+    color: #1C477F;
+}
+
+.addProInput {
+    display: flex;
+    font-family: Airbnb Cereal App;
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 368px;
+    height: 32px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.addProductBtn {
+    font-family: Airbnb Cereal App;
+    font-weight: 300;
+    background: #7399BD;
+    color: white;
+    border: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#noteInput {
+    height: 80px;
+}
+
+.checkbox {
+    font-family: Airbnb Cereal App;
+    margin-bottom: 10px;
+}
+
+.boxes {
+    margin-left: 30px;
+}
 
 

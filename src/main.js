@@ -5,7 +5,7 @@ import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
 import { productCard } from './product_cards';
 
-// Inicializar firebase
+//Inicializar firebase
 const firebaseAppConfig = getFirebaseConfig();
 const firebaseApp = initializeApp(firebaseAppConfig);
 const db = getDatabase();
@@ -50,8 +50,8 @@ onAuthStateChanged(auth, (user_account)=>{
         //Add products
         addProductSection.innerHTML = " ";
         addBtn2.addEventListener("click", function(e, ev){
-            const addProduct = new productCard(user_account);
-            addProductSection.appendChild(addProduct.renderAddProduct());
+            const addProduct = new productCard();
+            addProductSection.appendChild(addProduct.renderAddProduct(user_account.uid));
         });
 
     } else {
@@ -59,7 +59,7 @@ onAuthStateChanged(auth, (user_account)=>{
     }
 });
 
-addBtn.addEventListener("click", addPet);
+//addBtn.addEventListener("click", addPet);
 
 function signOut(e, ev){
     auth.signOut()
