@@ -54,16 +54,19 @@ onAuthStateChanged(auth, (user_account)=>{
             addProductSection.appendChild(addProduct.renderAddProduct());
         });
 
-<<<<<<< HEAD
-}
-=======
     } else {
+
         window.location.href = "login.html";
+        
     }
 });
 
->>>>>>> f40a02cef440f7e11917fa4771289f7598af465d
-addBtn.addEventListener("click", addPet);
+
+addBtn.addEventListener("click", (e, event) => {
+
+    window.location.href = "pet-signup.html";
+
+});
 
 function signOut(e, ev){
     auth.signOut()
