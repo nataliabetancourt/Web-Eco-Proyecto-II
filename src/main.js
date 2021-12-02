@@ -118,7 +118,6 @@ function newProduct(user_account){
                 amount: amount.value,
                 use: use.value,
                 expiration: expiration.value,
-                notes: notes.value,
                 days: days,
                 measurement: measurement
             }
