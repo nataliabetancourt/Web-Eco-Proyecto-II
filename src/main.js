@@ -3,6 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, push, set } from 'firebase/database';
 import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
+import { productCard } from './product_cards';
 import { isEmpty } from '@firebase/util';
 
 //Inicializar firebase
@@ -51,6 +52,26 @@ function actPets(data) {
         Object.keys(data).forEach((key, index)=> { 
             const card = new petCard(data[key])
             pets.appendChild(card.render()); 
+        });
+    }
+}
+
+
+//Get products from database
+function getProducts(user_account){
+    const dbRef = ref(db, 'users/' + user_account.uid + '/products');
+    onValue(dbRef, (snapshot) => {
+        const data = snapshot.val();
+        showProducts(data);
+    });
+}
+
+function showProducts(data){
+    if (data) {
+        productsSection.innerHTML = " ";
+        Object.keys(data).forEach((key, index)=> { 
+            const card = new productCard(data[key]);
+            productsSection.appendChild(card.render()); 
         });
     }
 }
@@ -114,6 +135,9 @@ function newProduct(user_account){
             product["id"] = newProductRef.key;
             //Add to database
             set(newProductRef, product);
+
+            //Close pop up
+            addProductSection.style.display = "none";
         }
     });
 }
@@ -124,22 +148,13 @@ onAuthStateChanged(auth, (user_account)=>{
     if (user_account){
         //Show pets registered
         getPets(user_account);
-
-        //Add products
-        addProductSection.innerHTML = " ";
-        addBtn2.addEventListener("click", function(e, ev){
-            const addProduct = new productCard(user_account);
-            addProductSection.appendChild(addProduct.renderAddProduct());
-        });
-
-
+        //Pop up that adds products
         newProduct(user_account);
-
+        //Show products
+        getProducts(user_account);
     } else {
-
         window.location.href = "login.html";
-        
-    }
+}
 });
 
 //Register new pet

@@ -1,4 +1,4 @@
-import { getDatabase, ref, onValue, set, update } from 'firebase/database';
+import { getDatabase, ref, onValue, set, push, update } from 'firebase/database';
 
 export class petCard{
 
@@ -25,13 +25,17 @@ export class petCard{
         breed.className = "breed";
         breed.innerHTML= this.pet.breed;
 
+        let animal = document.createElement("p");
+        animal.className = "animal";
+        animal.innerHTML= this.pet.animal;
+
         let birth = document.createElement("p");
         birth.className = "birth";
         birth.innerHTML= this.pet.dateBirth;
 
-        let condiciones = document.createElement("p");
-        condiciones.className = "condiciones";
-        condiciones.innerHTML= this.pet.conditions;
+        let conditions = document.createElement("p");
+        conditions.className = "conditions";
+        conditions.innerHTML= this.pet.conditions;
 
         let color = document.createElement("p");
         color.className = "color";
@@ -43,14 +47,30 @@ export class petCard{
 
         editBtn.addEventListener("click", (e, event) => {
         
+            const db = getDatabase();
+            const petRef = push(ref(db, 'users/' + user_account.uid + '/pets'));
             
+            const pets = {
 
+                petName: this.pet.name,
+                age: this.pet.age,
+                breed: this.pet.breed,
+                animal: this.pet.animal,
+                birth: this.pet.birth,
+                conditions: this.pet.conditions,
+               
+            }
+
+            set(petRef, pets);
+        
         });
 
 
         card.appendChild(petName);
         card.appendChild(age);
         card.appendChild(breed);
+        card.appendChild(conditions);
+        card.appendChild(animal);
         card.appendChild(birth);
         card.appendChild(color);
         card.appendChild(editBtn);
