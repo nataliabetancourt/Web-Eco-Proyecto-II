@@ -53,13 +53,13 @@ onAuthStateChanged(auth, (user_account)=>{
             const addProduct = new productCard();
             addProductSection.appendChild(addProduct.renderAddProduct(user_account.uid));
         });
-
     } else {
         window.location.href = "login.html";
     }
 });
 
 //addBtn.addEventListener("click", addPet);
+
 
 function signOut(e, ev){
     auth.signOut()
@@ -70,7 +70,6 @@ function signOut(e, ev){
         console.log(error.message);
     });
 }
-
 signOutBtn.addEventListener("click", signOut);
 
 

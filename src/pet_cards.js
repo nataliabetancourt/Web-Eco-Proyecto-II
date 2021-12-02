@@ -11,7 +11,7 @@ export class petCard{
         card.className = "cards";
 
         let petName = document.createElement("h3");
-        petName.className = "petName";
+        petName.className = "petNames";
 
         let age = document.createElement("p");
         age.className = "age";
