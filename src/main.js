@@ -130,6 +130,9 @@ function newProduct(user_account){
             product["id"] = newProductRef.key;
             //Add to database
             set(newProductRef, product);
+
+            //Close pop up
+            addProductSection.style.display = "none";
         }
     });
 }
