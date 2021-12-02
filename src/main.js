@@ -4,6 +4,7 @@ import { getDatabase, ref, onValue, push, set } from 'firebase/database';
 import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
 import { isEmpty } from '@firebase/util';
+import { productCard } from './product_cards';
 
 //Inicializar firebase
 const firebaseAppConfig = getFirebaseConfig();
@@ -18,6 +19,7 @@ const signOutBtn = document.getElementById('signOutBtn');
 
 
 //Product elements
+const productsSection = document.getElementById('productsSection');
 const addBtn2 = document.getElementById('addBtn2');
 const addProductSection = document.getElementById('addProductSection');
 const closeBtn = document.getElementById('closeBtn');
@@ -30,7 +32,7 @@ const expiration = document.getElementById('expiration');
 const notes = document.getElementById('notes');
 const addProBtn = document.getElementById('addProBtn');
 
-
+//Get pets from database
 function getPets(user_account) {
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
     onValue(dbRef, (snapshot) => {
@@ -39,12 +41,32 @@ function getPets(user_account) {
     });
 }
 
+//Show pets from database
 function actPets(data) {
     if (data) {
         pets.innerHTML = " ";
         Object.keys(data).forEach((key, index)=> { 
-            const card = new petCard(data[key])
+            const card = new petCard(data[key]);
             pets.appendChild(card.render()); 
+        });
+    }
+}
+
+//Get products from database
+function getProducts(user_account){
+    const dbRef = ref(db, 'users/' + user_account.uid + '/products');
+    onValue(dbRef, (snapshot) => {
+        const data = snapshot.val();
+        showProducts(data);
+    });
+}
+
+function showProducts(data){
+    if (data) {
+        productsSection.innerHTML = " ";
+        Object.keys(data).forEach((key, index)=> { 
+            const card = new productCard(data[key]);
+            productsSection.appendChild(card.render()); 
         });
     }
 }
@@ -118,7 +140,10 @@ onAuthStateChanged(auth, (user_account)=>{
     if (user_account){
         //Show pets registered
         getPets(user_account);
+        //Pop up that adds products
         newProduct(user_account);
+        //Show products
+        getProducts(user_account);
     } else {
         window.location.href = "login.html";
     }
