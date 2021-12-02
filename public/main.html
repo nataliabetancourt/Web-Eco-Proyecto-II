@@ -14,15 +14,48 @@
         <div id="mascotas">
             <h1 id="subtitle">Mascotas</h1>
             <button id="addBtn"> + </button>
-            <div id="addPetSection"></div>
-            <div id="pets"></div>
+            <div id="addPetSection" style="display: none;">  </div>
+                <div class="cardPets">
+
+                    <button id="closeBtn1" class="closeBtn1" style="float: right;">X</button>
+
+                    <h2 class="addProTitle">Tu mascota</h2>
+                    <input id="nombre"class="addProInput" placeholder="Nombre*"/>
+                    <input id="edad"class="addProInput" placeholder="Edad*"/>
+                    <input id="animal"class="addProInput" placeholder="Clase de tu mascota*"/>
+                    <input id="raza"class="addProInput" placeholder="Raza *"/>
+                    <input id="birth"class="addProInput" placeholder="Nacimiento de tu mascota*"/>
+                    <input id="condiciones"class="addProInput" placeholder="Condiciones de tu mascota*"/>
+                    <button id="saveBtn" class="savePetBtn"> Guardar </button>
+
+              
+                    <div id="pets"></div>
             
-            
-        </div>
-        <div id="productos">
+                </div>
+           
+
+
+         <div id="productos">
             <h1 id="subtitle2">Productos</h1>
             <button id="addBtn2"> + </button>
-            <div id="addProductSection"></div>
+            <div id="addProductSection" style="display: none;">
+                <div class="cardProduct">
+                    <button id="closeBtn" class="closeBtn" style="float: right;">X</button>
+                    <h2 class="addProTitle">Nuevo producto</h2>
+                    <input id="nameProduct"class="addProInput" placeholder="Nombre del producto*"/>
+                    <div class="checkbox">
+                        <input type="checkbox" id="grams"/>
+                        <label for="grams">Gramos</label>
+                        <input type="checkbox" id="units"/>
+                        <label for="units">Unidades</label>
+                    </div>
+                    <input id="amount" class="addProInput" placeholder="Cantidad del producto*"/>
+                    <input id="use" class="addProInput" placeholder="Gasto del producto*"/>
+                    <input id="expiration" class="addProInput" placeholder="Fecha de vencimiento*"/>
+                    <input id="notes" class="addProInput" placeholder="Notas(?)"/>
+                    <button id="addProBtn" class="addProductBtn">Agregar producto</button>
+                </div>
+            </div>
         </div>
     </body>
     <script src="main.js"></script>

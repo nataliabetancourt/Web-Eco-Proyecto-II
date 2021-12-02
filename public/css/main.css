@@ -55,8 +55,6 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border-radius: 5px;
-
-
 }
 
 .cards {
@@ -65,18 +63,19 @@
     font-style: normal;
     display:inline-flex;
     flex-direction: row;
+
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     padding: 1em;
     border-radius: 10px;
     height: 205px;
     width: 200px;
-    margin-top: 190px;
+    margin-top: 80px;
     margin-left: 85px;
-
 }
 
 .color {
+
     position: absolute;
     width: 90px;
     height: 90px;
@@ -91,25 +90,37 @@
 
     font-weight: 500;
     font-size: 20px;
-    margin-top: 115px;
-    margin-left: 70px;
-    position: absolute;;
-    color: #1C477F;
+    margin-top: 95px;
+    margin-left: 80px;
+    
 
+    width: 129px;
+    height: 21px;
+    left: 143px;
+    top: 347px;
+   
+
+    color: #1C477F;
 }
 
 .age {
-   
+
+    position: absolute;
     color: #1C477F;
     margin-top: 135px;
-    margin-left: 90px;
+    margin-left: 100px;
     font-weight: 400;
+
+    font-weight: normal;
+    line-height: 5px;
+
     font-size: 16px;
 
 }
 
 .breed {
 
+    position: absolute;
     color: #1C477F;
     margin-top: 135px;
     margin-left: 90px;
@@ -126,17 +137,86 @@
     width: 156px;
     height: 36px;
     left: 130px;
+
     top: 400px;
     color: white;
+
+    top: 387px;
+
     background: #7399BD;
     border-radius: 10px;
-
 }
+
 
 .hidden {
     visibility: hidden;
     display: none;
 }
 
+
+
+.cardProduct {
+    position: relative;
+    margin-left: 50px;  
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    padding: 1em;
+    border-radius: 10px;
+    width: 615px;
+}
+
+.closeBtn {
+    font-family: Airbnb Cereal App;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    color: #1C477F;
+    box-shadow: 0px 0px 15px rgba(182, 182, 182, 0.301);
+    padding: 10px;
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    margin-right: 0;
+}
+
+.addProTitle {
+    font-family: Airbnb Cereal App;
+    font-weight: 500;
+    color: #1C477F;
+}
+
+.addProInput {
+    display: flex;
+    font-family: Airbnb Cereal App;
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 368px;
+    height: 32px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.addProductBtn {
+    font-family: Airbnb Cereal App;
+    font-weight: 300;
+    background: #7399BD;
+    color: white;
+    border: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#noteInput {
+    height: 80px;
+}
+
+.checkbox {
+    font-family: Airbnb Cereal App;
+    margin-bottom: 10px;
+}
+
+.boxes {
+    margin-left: 30px;
+}
 
 
