@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, push, set } from 'firebase/database';
+import { getDatabase, ref, onValue, push, set, update } from 'firebase/database';
 import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
 import { isEmpty } from '@firebase/util';
@@ -53,15 +53,17 @@ function getProducts(user_account){
     const dbRef = ref(db, 'users/' + user_account.uid + '/products');
     onValue(dbRef, (snapshot) => {
         const data = snapshot.val();
-        showProducts(data);
+        showProducts(data, user_account);
+        //calculateDays(data, user_account);
     });
 }
 
-function showProducts(data){
+//Show products in database
+function showProducts(data, user_account){
     if (data) {
         productsSection.innerHTML = " ";
         Object.keys(data).forEach((key, index)=> { 
-            const card = new productCard(data[key]);
+            const card = new productCard(data[key], user_account);
             productsSection.appendChild(card.render()); 
         });
     }
@@ -104,18 +106,21 @@ function newProduct(user_account){
             //Get amount of days of use by dividing variables
             let daysCalculated = amount.value/use.value;
             days = daysCalculated.toFixed(0);
-            console.log(days);
 
             //Add measurement for info
             if (grams.checked) {measurement = "gramos";} else if (units.checked) {measurement = "unidades";}
+            //Date to know how many days have passed later on
+            let date = new Date();
+            let dateFormat = date.toLocaleDateString("en-US");
 
             const product = {
                 name: nameProduct.value,
                 amount: amount.value,
                 use: use.value,
-                expiration: expiration.value,
                 days: days,
-                measurement: measurement
+                measurement: measurement,
+                date: dateFormat,
+                button: false
             }
 
             //Add to database
@@ -128,8 +133,39 @@ function newProduct(user_account){
 
             //Close pop up
             addProductSection.style.display = "none";
+            addBtn2.style = "block";
         }
     });
+}
+
+//Change number of days of products based on days passed since added
+function calculateDays(data, user_account){
+    if (data) {
+        Object.keys(data).forEach((key, index)=> { 
+            //Todays date and time
+            let today = new Date();
+            //Change time
+            let changeTime = new Date();
+            changeTime.setHours(14, 26);
+
+            //Product date
+            let proDate = new Date(data[key].date);
+
+            //Calculate time difference of dates
+            let timeDiff = today.getTime() - proDate.getTime();
+            //Calculate number of days between dates and n. days for product
+            let daysCal = timeDiff/(1000*3600*24);
+            let daysPassed = daysCal.toFixed(0);
+
+            //Update number of remaining days at 12:00 am
+            if (today.getTime() === changeTime.getTime()) {
+                const productRef = ref(db, 'users/' + user_account.uid + '/products/' + key);
+                let daysPro = data[key].days;
+                console.log(daysPro - daysPassed);
+                //update(productRef, {"days": daysPro - daysPassed});
+            }
+        });
+    }
 }
 
 //If user is signed in, show pets and products
@@ -150,18 +186,15 @@ onAuthStateChanged(auth, (user_account)=>{
 
 //Register new pet
 addBtn.addEventListener("click", (e, event) => {
-
     window.location.href = "pet-signup.html";
-
 });
 
 //Add products pop up
 addBtn2.addEventListener("click", function(e, ev){ 
-    
     addProductSection.style = "block";
-
 });
 
+//Sign out function
 function signOut(e, ev){
     auth.signOut()
     .then(()=> {
@@ -172,5 +205,4 @@ function signOut(e, ev){
     });
 }
 signOutBtn.addEventListener("click", signOut);
-
 

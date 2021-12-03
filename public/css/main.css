@@ -384,6 +384,7 @@
 
 }
 
+<<<<<<< HEAD
 #subtitle2 {
     font-family: Airbnb Cereal App;
     font-style: normal;
@@ -398,6 +399,8 @@
     top: 459px;
 }
 
+=======
+>>>>>>> ab1426186f5bf01013ed25591db18ac4d86b4b7b
 .cardProduct {
     position: relative;
     margin-left: 50px;  
@@ -406,7 +409,7 @@
     padding: 1em;
     border-radius: 10px;
     width: 615px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .closeBtn {
@@ -450,10 +453,6 @@
     padding: 10px;
 }
 
-#noteInput {
-    height: 80px;
-}
-
 .checkbox {
     font-family: Airbnb Cereal App;
     margin-bottom: 10px;
@@ -464,7 +463,7 @@
 }
 
 #productsSection {
-    margin-top: 90px;
+    margin-top: 50px;
     margin-left: 60px;
 }
 
@@ -476,6 +475,7 @@
     border-radius: 10px;
     width: 279px;
     margin-left: 50px;
+    margin-top: 30px;
 }
 
 .productName {
@@ -511,6 +511,17 @@
     color: #6A453B;
     text-align: right;
     margin-top: -50px;
+}
+
+.refresh {
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 235px;
+    width: 41px;
+    height: 36px;
+    background: #7399BD;
+    border-radius: 5px;
+    border: rgba(255, 255, 255, 0);
 }
 
 

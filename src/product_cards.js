@@ -1,8 +1,10 @@
 import { getDatabase, ref, onValue, set, update, push } from 'firebase/database';
 
 export class productCard {
-    constructor(product){
+    constructor(product, user_account){
         this.product = product;
+        this.user_account = user_account;
+        this.todayDate = new Date();
     }
 
     render(){
@@ -15,15 +17,27 @@ export class productCard {
         name.className = "productName";
         name.innerHTML = this.product.name;
 
+        //Refresh button for days
+        console.log(this.checkDates());
+        let refresh = document.createElement("button");
+        refresh.className = "refresh";
+        if (this.checkDates() == false) {
+            refresh.addEventListener("click", (e, ev)=>{
+            this.calculateDays();
+            });
+        } else {
+            refresh.style.display = "none";
+        }
+        
         //Amount
         let amount = document.createElement("p");
         amount.className = "productInfo";
         amount.innerHTML = this.product.amount + " " + this.product.measurement;
 
-        //Expiration
-        let expiration = document.createElement("p");
-        expiration.className = "productInfo";
-        expiration.innerHTML = this.product.expiration;
+        //Date registered
+        let date = document.createElement("p");
+        date.className = "productInfo";
+        date.innerHTML = this.product.date;
 
         //Days indicator
         let daysInd = document.createElement("p");
@@ -36,11 +50,43 @@ export class productCard {
         days.innerHTML = this.product.days;
 
         card.appendChild(name);
+        card.appendChild(refresh);  
         card.appendChild(amount);
-        card.appendChild(expiration);
+        card.appendChild(date);
         card.appendChild(daysInd);
         card.appendChild(days);
 
         return card;
+    }
+
+    checkDates(){
+        //Todays date and time
+        let today = new Date();
+        let todayFormat = today.toLocaleDateString("en-US");
+        if (todayFormat === this.product.dateBtnClick) {
+            return true;
+        }
+        return false;
+    }
+
+    calculateDays(){
+        //Todays date and time
+        let today = new Date();
+        let todayFormat = today.toLocaleDateString("en-US");
+        //Product date
+        let proDate = new Date(this.product.date);
+
+        //Calculate time difference of dates
+        let timeDiff = today.getTime() - proDate.getTime();
+        //Calculate number of days between dates and n. days for product
+        let daysCal = timeDiff/(1000*3600*24);
+        let daysPassed = daysCal.toFixed(0);
+
+        const db = getDatabase();
+        const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product.id);
+        let daysPro = this.product.days;
+        update(productRef, {"days": daysPro - daysPassed}); 
+        update(productRef, {"button": false});
+        update(productRef, {"dateBtnClick": todayFormat});
     }
 }
