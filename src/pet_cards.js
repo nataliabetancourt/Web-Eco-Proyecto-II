@@ -21,6 +21,7 @@ export class petCard{
         petName.className = "petName";
         petName.innerHTML= this.pet.name;
 
+        //Pop up with the 
         petName.addEventListener("click", (e, event) => {
 
             console.log("card")
@@ -31,7 +32,6 @@ export class petCard{
             let pet = document.createElement("h3");
             pet.className = "pet";
             pet.innerHTML= this.pet.name;
-
 
             let age = document.createElement("p");
             age.className = "age";
@@ -92,25 +92,25 @@ export class petCard{
             petName1.className = "petName1";
             petName1.placeholder= this.pet.name;
 
-            /*let age = document.createElement("input");
-            age.className = "age";
-            age.placeholder= this.pet.age;
+            let age1 = document.createElement("input");
+            age1.className = "age1";
+            age1.placeholder= this.pet.age;
     
-            let breed = document.createElement("input");
-            breed.className = "breed";
-            breed.placeholder= this.pet.breed;
+            let breed1 = document.createElement("input");
+            breed1.className = "breed1";
+            breed1.placeholder= this.pet.breed;
     
-            let animal = document.createElement("input");
-            animal.className = "animal";
-            animal.placeholder= this.pet.animal;
+            let animal1 = document.createElement("input");
+            animal1.className = "animal1";
+            animal1.placeholder= this.pet.animal;
     
-            let birth = document.createElement("input");
-            birth.className = "birth";
-            birth.placeholder= this.pet.dateBirth;
+            let birth1 = document.createElement("input");
+            birth1.className = "birth1";
+            birth1.placeholder= this.pet.dateBirth;
     
-            let conditions = document.createElement("input");
-            conditions.className = "conditions";
-            conditions.placeholder= this.pet.conditions;*/
+            let conditions1 = document.createElement("input");
+            conditions1.className = "conditions1";
+            conditions1.placeholder= this.pet.conditions;
     
             let closePBtn1 = document.createElement("button");
             closePBtn1.className = "closePBtn1";
@@ -142,15 +142,13 @@ export class petCard{
                 update(petRef, {"pets": updatePet});
                 
             });
-        
-             //card.className = "hidden";
 
              card.appendChild(editCard);
              editCard.appendChild(petName1);
-             /*editCard.appendChild(age);
-             editCard.appendChild(breed);
-             editCard.appendChild(birth);
-             editCard.appendChild(conditions);*/
+             editCard.appendChild(age1);
+             editCard.appendChild(breed1);
+             editCard.appendChild(birth1);
+             editCard.appendChild(conditions1);
              editCard.appendChild(closePBtn1);
              editCard.appendChild(saveBtn);
             
