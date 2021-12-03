@@ -3,7 +3,6 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, push, set } from 'firebase/database';
 import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
-import { productCard } from './product_cards';
 import { isEmpty } from '@firebase/util';
 import { productCard } from './product_cards';
 
@@ -59,10 +58,8 @@ function actPets(data) {
     }
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6f110633b4c6b90694351923d65ed0c8a70b7c39
+
 //Get products from database
 function getProducts(user_account){
     const dbRef = ref(db, 'users/' + user_account.uid + '/products');
@@ -175,7 +172,6 @@ addBtn2.addEventListener("click", function(e, ev){
     addProductSection.style = "block";
 
 });
-
 
 
 function signOut(e, ev){

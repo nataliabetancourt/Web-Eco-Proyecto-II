@@ -45,6 +45,7 @@ export class petCard{
         editBtn.className = "editBtn";
         editBtn.innerHTML = "Editar";
 
+
         editBtn.addEventListener("click", (e, event) => {
         
             const db = getDatabase();
@@ -64,7 +65,7 @@ export class petCard{
             set(petRef, pets);
         
         });
-
+    
 
         card.appendChild(petName);
         card.appendChild(age);

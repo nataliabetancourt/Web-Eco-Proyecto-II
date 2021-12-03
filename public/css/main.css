@@ -101,7 +101,7 @@
 
     font-weight: 500;
     font-size: 20px;
-    margin-top: 25px;
+    margin-top: 10px;
     margin-left: 130px;
     
     width: 129px;
@@ -114,7 +114,7 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 65px;
+    margin-top: 50px;
     margin-left: 130px;
     font-weight: 400;
 
@@ -125,22 +125,22 @@
 
 }
 
-.breed {
+.birth {
 
     position: absolute;
     color: #1C477F;
-    margin-top: 85px;
+    margin-top: 70px;
     margin-left: 130px;
     font-weight: 400;
     font-size: 16px;
 
 }
 
-.birth {
+.breed {
 
     position: absolute;
     color: #1C477F;
-    margin-top: 85px;
+    margin-top: 100px;
     margin-left: 130px;
     font-weight: 400;
     font-size: 16px;
@@ -151,7 +151,7 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 110px;
+    margin-top: 120px;
     margin-left: 130px;
     font-weight: 400;
     font-size: 16px;
@@ -162,7 +162,7 @@
 
     position: absolute;
     color: #5890d8;
-    margin-top: 33px;
+    margin-top: 18px;
     margin-left: 180px;
     font-weight: 400;
     font-size: 12px;
@@ -171,28 +171,27 @@
 
 .editBtn {
 
-    font-weight: 500;
-    padding: 0.5em;
-    position: absolute;
+    display:flex;
+    flex-direction: row;
+    font-size: 18px;
     width: 256px;
     height: 36px;
-    left: 130px;
-
-    top: 400px;
+    position:absolute;
+    margin-left: 20px;
+    margin-top: 150px;
     color: white;
-
-    top: 387px;
-
-    background: #7399BD;
+    background-color: #7399BD;
     border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    border: rgba(255, 255, 255, 0);
 }
 
-<<<<<<< HEAD
 
 .hidden {
     visibility: hidden;
     display: none;
-=======
+}
+
 .color {
     position: absolute;
     width: 26px;
@@ -201,7 +200,7 @@
     top: 300px;
     border-radius: 100px;
     background: #DBFF8D;
->>>>>>> 6f110633b4c6b90694351923d65ed0c8a70b7c39
+
 }
 
 
