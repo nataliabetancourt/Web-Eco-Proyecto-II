@@ -12,16 +12,6 @@ const firebaseApp = initializeApp(firebaseAppConfig);
 const db = getDatabase();
 const auth = getAuth();
 
-//Pet elements
-const pets = document.getElementById('pets');
-const addBtn = document.getElementById('addBtn');
-const addPetSection = document.getElementById('addPetSection');
-const signOutBtn = document.getElementById('signOutBtn');
-const age = document.getElementById('age');
-const breed = document.getElementById('grams');
-const birth = document.getElementById('units');
-const condiciones = document.getElementById('amount');
-const closeBtn1 = document.getElementById('closeBtn');
 
 //Product elements
 const productsSection = document.getElementById('productsSection');
@@ -57,8 +47,6 @@ function actPets(data) {
         });
     }
 }
-
-
 
 //Get products from database
 function getProducts(user_account){
@@ -154,6 +142,7 @@ onAuthStateChanged(auth, (user_account)=>{
         newProduct(user_account);
         //Show products
         getProducts(user_account);
+
     } else {
         window.location.href = "login.html";
 }
@@ -172,7 +161,6 @@ addBtn2.addEventListener("click", function(e, ev){
     addProductSection.style = "block";
 
 });
-
 
 function signOut(e, ev){
     auth.signOut()
