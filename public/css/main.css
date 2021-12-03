@@ -80,9 +80,72 @@
     padding: 1em;
     border-radius: 10px;
     height: 205px;
-    width: 300px;
+    width: 200px;
     margin-top: 185px;
-    margin-left: 85px;
+    margin-left: 110px;
+    border: rgba(255, 255, 255, 0);
+}
+
+.infoCard {
+
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+    
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    padding: 1em;
+    border-radius: 10px;
+    height: 205px;
+    width: 250px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border: rgba(255, 255, 255, 0);
+}
+
+.editCard {
+
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+  
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    padding: 1em;
+    border-radius: 10px;
+    height: 205px;
+    width: 250px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border: rgba(255, 255, 255, 0);
+}
+
+.closePBtn {
+    
+    font-weight: 800;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: #1C477F;
+    box-shadow: 0px 0px 15px rgba(182, 182, 182, 0.301);
+    padding: 10px;
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    margin-right: 0;
+    margin-top: -50px;
+}
+
+.closePBtn1 {
+    
+    font-weight: 800;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    color: #1C477F;
+    box-shadow: 0px 0px 15px rgba(182, 182, 182, 0.301);
+    padding: 10px;
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    margin-right: 0;
+    margin-top: -50px;
 }
 
 .color {
@@ -102,11 +165,20 @@
     font-weight: 500;
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 130px;
-    
+    margin-left: 50px;
     width: 129px;
     height: 21px;
-   
+    color: #1C477F;
+}
+
+.pet {
+
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 129px;
+    height: 21px;
     color: #1C477F;
 }
 
@@ -114,10 +186,8 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 50px;
-    margin-left: 130px;
-    font-weight: 400;
-
+    margin-top: 0px;
+    margin-left: 50px;
     font-weight: normal;
     line-height: 5px;
 
@@ -125,12 +195,12 @@
 
 }
 
-.birth {
+.animal {
 
     position: absolute;
     color: #1C477F;
-    margin-top: 70px;
-    margin-left: 130px;
+    margin-top: 18px;
+    margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
 
@@ -140,10 +210,38 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 100px;
-    margin-left: 130px;
+    margin-top: 50px;
+    margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
+
+}
+
+.birth {
+
+    position: absolute;
+    color: #1C477F;
+    margin-top: 80px;
+    margin-left: 50px;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+.petName1 {
+
+    display: flex;
+    font-family: Airbnb Cereal App;
+
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200.px;
+    height: 32px;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 5px;
 
 }
 
@@ -151,30 +249,19 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 120px;
-    margin-left: 130px;
+    margin-top: 110px;
+    margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
 
 }
 
-.animal {
-
-    position: absolute;
-    color: #5890d8;
-    margin-top: 18px;
-    margin-left: 180px;
-    font-weight: 400;
-    font-size: 12px;
-
-}
-
-.editBtn {
+.saveBtn {
 
     display:flex;
     flex-direction: row;
     font-size: 18px;
-    width: 256px;
+    width: 56px;
     height: 36px;
     position:absolute;
     margin-left: 20px;
@@ -185,6 +272,26 @@
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border: rgba(255, 255, 255, 0);
 }
+
+
+.editBtn {
+
+    display:flex;
+    flex-direction: row;
+    font-size: 18px;
+    width: 156px;
+    height: 36px;
+    position:absolute;
+    margin-left: 20px;
+    margin-top: 150px;
+    color: white;
+    background-color: #7399BD;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
+    border: rgba(255, 255, 255, 0);
+}
+
+
 
 
 .hidden {
