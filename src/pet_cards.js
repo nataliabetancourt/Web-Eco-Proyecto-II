@@ -18,7 +18,7 @@ export class petCard{
         petName.className = "petName";
         petName.innerHTML= this.pet.name;
 
-        //Pop up with the 
+        //Pop up with the info
         petName.addEventListener("click", (e, event) => {
 
             let infoCard = document.createElement("div");
@@ -74,6 +74,7 @@ export class petCard{
         editBtn.className = "editBtn";
         editBtn.innerHTML = " Editar";
 
+
         editBtn.addEventListener("click", (e, event) => {
 
             let editCard = document.createElement("div");
@@ -118,6 +119,7 @@ export class petCard{
             saveBtn.className = "saveBtn";
             saveBtn.innerHTML = "Guardar";
 
+            //database update
             saveBtn.addEventListener("click", (e, event) => {
 
                 const db = getDatabase();
