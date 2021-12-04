@@ -26,12 +26,12 @@ export class productCard {
 
         refresh.appendChild(refreshIcon);
 
-        if (this.checkDates() == true) {
+        if (this.checkDates() == false) {
            
             refresh.addEventListener("click", (e, ev)=>{
 
             this.calculateDays();
-            alert ("Se actualizo tu producto, te quedan: " + this.product.amount);
+            alert ("Se actualizo tu producto, te quedan: " + (this.product.amount - this.product.use));
 
             });
             
