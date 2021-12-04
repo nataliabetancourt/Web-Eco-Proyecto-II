@@ -20,6 +20,10 @@ export class productCard {
         //Refresh button for days
         let refresh = document.createElement("button");
         refresh.className = "refresh";
+        //Icon
+        let refreshIcon = document.createElement("img");
+        refreshIcon.src = "../public/images/refresh.png";
+        refresh.appendChild(refreshIcon);
         if (this.checkDates() == false) {
             refresh.addEventListener("click", (e, ev)=>{
             this.calculateDays();
@@ -88,7 +92,7 @@ export class productCard {
         const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product.id);
 
         //Condition to delete when no days are left
-         if (this.product.days < 0 || this.product.days === 0) {
+         if (this.product.days < 0 || this.product.days == 0) {
             //const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product);
             remove(productRef);
         } else {
