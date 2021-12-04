@@ -10,9 +10,18 @@ export class petCard{
     }
 
     render(){
-
         let card = document.createElement("div");
         card.className = "cards";
+
+        //Image with animal based on animal
+        let image = document.createElement("img");
+        if (this.pet.animal === "Perro" || this.pet.animal === "perro") {
+            image.src = "../public/images/perro.png";
+        } else if (this.pet.animal === "Gato" || this.pet.animal === "gato") {
+            image.src = "../public/images/gato.png";
+        }
+
+        card.appendChild(image);
 
         let petName = document.createElement("h3");
         petName.className = "petName";
@@ -26,19 +35,19 @@ export class petCard{
 
             let pet = document.createElement("h3");
             pet.className = "pet";
-            pet.innerHTML= "Nombre:" + this.pet.name;
+            pet.innerHTML= "Nombre: " + this.pet.name;
 
             let age = document.createElement("p");
             age.className = "age";
-            age.innerHTML= "Edad:" + this.pet.age;
+            age.innerHTML= "Edad: " + this.pet.age;
     
             let breed = document.createElement("p");
             breed.className = "breed";
-            breed.innerHTML= "Raza:" + this.pet.breed;
+            breed.innerHTML= "Raza: " + this.pet.breed;
     
             let animal = document.createElement("p");
             animal.className = "animal";
-            animal.innerHTML= "Animal:" + this.pet.animal;
+            animal.innerHTML= "Animal: " + this.pet.animal;
     
             let birth = document.createElement("p");
             birth.className = "birth";
@@ -46,7 +55,7 @@ export class petCard{
     
             let conditions = document.createElement("p");
             conditions.className = "conditions";
-            conditions.innerHTML= "Condiciones:" + this.pet.conditions;
+            conditions.innerHTML= "Condiciones: " + this.pet.conditions;
     
             let closePBtn = document.createElement("button");
             closePBtn.className = "closePBtn";
@@ -109,10 +118,8 @@ export class petCard{
             closePBtn1.innerHTML = " X ";
 
             closePBtn1.addEventListener("click", (e, event) => {
-
                 editCard.style.display = "none"
-                console.log("card1")
-                
+                console.log("card1") 
             });
 
             let saveBtn = document.createElement("button");

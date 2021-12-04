@@ -20,14 +20,25 @@ export class productCard {
         //Refresh button for days
         let refresh = document.createElement("button");
         refresh.className = "refresh";
-        if (this.checkDates() == false) {
+        //Icon
+        let refreshIcon = document.createElement("img");
+        refreshIcon.src = "../public/images/refresh.png";
+
+        refresh.appendChild(refreshIcon);
+
+        if (this.checkDates() == true) {
+           
             refresh.addEventListener("click", (e, ev)=>{
+
             this.calculateDays();
+            alert ("Se actualizo tu producto, te quedan: " + this.product.amount);
+
             });
+            
         } else {
             refresh.style.display = "none";
         }
-        
+
         //Amount
         let amount = document.createElement("p");
         amount.className = "productInfo";
@@ -87,31 +98,10 @@ export class productCard {
         const db = getDatabase();
         const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product.id);
 
-        function notifyMe() {
-
-            if (!("Notification" in window)) {
-
-                alert("Tu navegador no soporta notificaciones");
-
-              }else if(Notification.permission === "granted"){
-
-                // Lanzar notificacion si ya esta autorizado el servicio
-                var notification = new Notification("Mi primer notificación");
-
-              }else if(Notification.permission !== "denied"){
-
-                Notification.requestPermission(function(permission){
-
-                   if(Notification.permission === "granted"){
-                     var notification = new Wotification("Hola mundo !")
-                   }
-            });
-                                                                                  
-
-        }
+        
 
         //Condition to delete when no days are left
-         if (this.product.days < 0 || this.product.days === 0) {
+         if (this.product.days < 0 || this.product.days == 0) {
             //const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product);
             remove(productRef);
         } else {
@@ -123,3 +113,4 @@ export class productCard {
         }
     }
 }
+
