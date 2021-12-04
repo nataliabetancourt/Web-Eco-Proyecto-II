@@ -37,19 +37,7 @@
     border: rgba(255, 255, 255, 0);
 }
 
-#subtitle2 {
-    font-family: Airbnb Cereal App;
-    font-style: normal;
-    font-weight: 5px;
-    font-size: 28px;
-    line-height: 36px;
-    color: #1C477F;
-    position: absolute;
-    width: 137px;
-    height: 36px;
-    left: 60px;
-    top: 459px;
-}
+
 
 #addBtn2 {
     display: inline-block;
@@ -113,9 +101,9 @@
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     padding: 1em;
     border-radius: 10px;
-    height: 205px;
+    height: 255px;
     width: 250px;
-    margin-top: 0px;
+    margin-top: -35px;
     margin-left: 0px;
     border: rgba(255, 255, 255, 0);
 }
@@ -136,16 +124,17 @@
 
 .closePBtn1 {
     
+    position: absolute;
+    margin-left: 5px;
+    margin-top: -200px;
     font-weight: 800;
-    position: fixed;
     background-color: rgb(255, 255, 255);
     color: #1C477F;
     box-shadow: 0px 0px 15px rgba(182, 182, 182, 0.301);
     padding: 10px;
     border-radius: 10px;
     border: rgba(255, 255, 255, 0);
-    margin-right: 0;
-    margin-top: -50px;
+   
 }
 
 .color {
@@ -210,7 +199,7 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 50px;
+    margin-top: 48px;
     margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
@@ -221,7 +210,18 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 80px;
+    margin-top: 78px;
+    margin-left: 50px;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+.conditions {
+
+    position: absolute;
+    color: #1C477F;
+    margin-top: 110px;
     margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
@@ -237,22 +237,95 @@
     border: 1px solid #1C477F;
     box-sizing: border-box;
     border-radius: 5px;
-    width: 200.px;
+    width: 180px;
     height: 32px;
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 50px;
     padding: 5px;
 
 }
 
-.conditions {
+.age1 {
 
-    position: absolute;
-    color: #1C477F;
-    margin-top: 110px;
+    display: flex;
+    font-family: Airbnb Cereal App;
+
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
     margin-left: 50px;
-    font-weight: 400;
-    font-size: 16px;
+    padding: 5px;
+
+}
+
+.animal1 {
+
+    display: flex;
+    font-family: Airbnb Cereal App;
+
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 5px;
+
+}
+
+.breed1 {
+
+    display: flex;
+    font-family: Airbnb Cereal App;
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 5px;
+
+}
+
+.birth1 {
+
+    display: flex;
+    font-family: Airbnb Cereal App;
+
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 5px;
+
+}
+
+.conditions1 {
+
+    display: flex;
+    font-family: Airbnb Cereal App;
+
+    background: #FFFFFF;
+    border: 1px solid #1C477F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 5px;
 
 }
 
@@ -261,16 +334,17 @@
     display:flex;
     flex-direction: row;
     font-size: 18px;
-    width: 56px;
-    height: 36px;
+    width: 210px;
+    height: 30px;
     position:absolute;
     margin-left: 20px;
-    margin-top: 150px;
+    margin-top: 15px;
     color: white;
     background-color: #7399BD;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(143, 143, 143, 0.301);
     border: rgba(255, 255, 255, 0);
+
 }
 
 
@@ -308,6 +382,20 @@
     border-radius: 100px;
     background: #DBFF8D;
 
+}
+
+#subtitle2 {
+    font-family: Airbnb Cereal App;
+    font-style: normal;
+    font-weight: 5px;
+    font-size: 28px;
+    line-height: 36px;
+    color: #1C477F;
+    position: absolute;
+    width: 137px;
+    height: 36px;
+    left: 60px;
+    top: 459px;
 }
 
 .cardProduct {
