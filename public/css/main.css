@@ -199,7 +199,7 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 50px;
+    margin-top: 48px;
     margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
@@ -210,7 +210,7 @@
 
     position: absolute;
     color: #1C477F;
-    margin-top: 80px;
+    margin-top: 78px;
     margin-left: 50px;
     font-weight: 400;
     font-size: 16px;
@@ -384,7 +384,6 @@
 
 }
 
-<<<<<<< HEAD
 #subtitle2 {
     font-family: Airbnb Cereal App;
     font-style: normal;
@@ -399,8 +398,6 @@
     top: 459px;
 }
 
-=======
->>>>>>> ab1426186f5bf01013ed25591db18ac4d86b4b7b
 .cardProduct {
     position: relative;
     margin-left: 50px;  

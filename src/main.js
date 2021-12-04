@@ -33,16 +33,17 @@ function getPets(user_account) {
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
     onValue(dbRef, (snapshot) => {
         const data = snapshot.val();
-        actPets(data);
+        actPets(data, user_account);
+
     });
 }
 
 //Show pets from database
-function actPets(data) {
+function actPets(data, user_account) {
     if (data) {
         pets.innerHTML = " ";
         Object.keys(data).forEach((key, index)=> { 
-            const card = new petCard(data[key]);
+            const card = new petCard(data[key],user_account);
             pets.appendChild(card.render()); 
         });
     }
