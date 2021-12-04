@@ -1,4 +1,4 @@
-import { getDatabase, ref, onValue, set, update, push } from 'firebase/database';
+import { getDatabase, ref, update, remove } from 'firebase/database';
 
 export class productCard {
     constructor(product, user_account){
@@ -18,7 +18,6 @@ export class productCard {
         name.innerHTML = this.product.name;
 
         //Refresh button for days
-        console.log(this.checkDates());
         let refresh = document.createElement("button");
         refresh.className = "refresh";
         if (this.checkDates() == false) {
@@ -82,11 +81,22 @@ export class productCard {
         let daysCal = timeDiff/(1000*3600*24);
         let daysPassed = daysCal.toFixed(0);
 
+        //Calculate amount left
+        let amountLeft = this.product.amount - (this.product.use*daysPassed);
+
         const db = getDatabase();
         const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product.id);
-        let daysPro = this.product.days;
-        update(productRef, {"days": daysPro - daysPassed}); 
-        update(productRef, {"button": false});
-        update(productRef, {"dateBtnClick": todayFormat});
+
+        //Condition to delete when no days are left
+         if (this.product.days < 0 || this.product.days === 0) {
+            //const productRef = ref(db, 'users/' + this.user_account.uid + '/products/' + this.product);
+            remove(productRef);
+        } else {
+            let daysPro = this.product.days;
+            update(productRef, {"days": daysPro - daysPassed}); 
+            update(productRef, {"amount": amountLeft}); 
+            update(productRef, {"button": false});
+            update(productRef, {"dateBtnClick": todayFormat});
+        }
     }
 }

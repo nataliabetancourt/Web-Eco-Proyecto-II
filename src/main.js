@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, push, set, update } from 'firebase/database';
+import { getDatabase, ref, onValue, push, set, update, remove } from 'firebase/database';
 import { getFirebaseConfig } from './firebase-config';
 import { petCard } from './pet_cards';
 import { isEmpty } from '@firebase/util';
@@ -29,7 +29,6 @@ const addProBtn = document.getElementById('addProBtn');
 
 //Get pets from database
 function getPets(user_account) {
-    
     const dbRef = ref(db, 'users/' + user_account.uid + '/pets');
     onValue(dbRef, (snapshot) => {
         const data = snapshot.val();
@@ -121,6 +120,7 @@ function newProduct(user_account){
                 days: days,
                 measurement: measurement,
                 date: dateFormat,
+                dateBtnClick: " ",
                 button: false
             }
 
